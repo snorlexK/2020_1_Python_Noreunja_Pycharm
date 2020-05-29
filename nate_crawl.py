@@ -1,10 +1,7 @@
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
-import os
 from datetime import datetime
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 req = requests.get('http://ad.search.nate.com/iframe/bizhotkwd.html?v=2')
 html = req.text

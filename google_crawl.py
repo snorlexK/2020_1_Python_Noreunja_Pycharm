@@ -1,10 +1,7 @@
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
-import os
 from dateutil.parser import parse
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 req = requests.get('https://trends.google.com/trends/trendingsearches/daily/rss?geo=KR')
 html = req.text
