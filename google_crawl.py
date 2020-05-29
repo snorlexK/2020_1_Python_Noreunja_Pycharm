@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 import os
+from dateutil.parser import parse
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -15,10 +16,11 @@ time = soup.select('channel > item > pubDate')
 data = []
 
 for item in zip(keywords, time):
+    parseTime = parse(item[1].text)
     data.append(
         {
             'keyword': item[0].text,
-            'time': item[1].text,
+            'time': parseTime,
         }
     )
 
